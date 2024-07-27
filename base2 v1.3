@@ -1,0 +1,93 @@
+#include <algorithm>
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <string>
+#include <vector>
+using namespace std;
+struct calculo {
+//int escolha; 
+float valor1, valor2, res; //*ponteiro1,*ponteiro2, *ponteiro3;
+int decisao;
+
+};
+void Soma(calculo& v){
+  //*ponteiro3 = *ponteiro1 + *ponteiro2;
+  cout<<"digite o primeiro valor"<<endl;
+  cin>>v.valor1;
+  cout<<"digite o segundo valor"<<endl;
+  cin>>v.valor2;
+   v.res=v.valor1+v.valor2;
+  cout<<"Resultado da soma:\n"<<v.res<<endl;
+  cout<<"continuar calculo? 1-sim 2-nao"<<endl;
+  cin>>v.decisao; 
+
+};
+void Subtracao(calculo& v){
+  //*ponteiro3 = *ponteiro1 - *ponteiro2;
+  cout<<"digite o primeiro valor"<<endl;
+  cin>>v.valor1;
+  cout<<"digite o segundo valor"<<endl;
+  cin>>v.valor2;
+   v.res=v.valor1-v.valor2;
+  cout<<"Resultado da subtração:\n"<<v.res<<endl;
+  cout<<"continuar calculo? 1-sim 2-nao"<<endl;
+  cin>>v.decisao; 
+};
+void Multiplicacao(calculo& v){
+  cout<<"digite o primeiro valor"<<endl;
+  cin>>v.valor1;
+  cout<<"digite o segundo valor"<<endl;
+  cin>>v.valor2;
+   v.res=v.valor1*v.valor2;
+  cout<<"Resultado da multiplicacao:\n"<<v.res<<endl;
+  cout<<"continuar calculo? 1-sim 2-nao"<<endl;
+  cin>>v.decisao; 
+  
+};
+void Divisao(calculo& v){
+  cout<<"digite o primeiro valor"<<endl;
+  cin>>v.valor1;
+  cout<<"digite o segundo valor"<<endl;
+  cin>>v.valor2;
+   v.res=v.valor1/v.valor2;
+  cout<<"Resultado da   divisao:\n"<<v.res<<endl;
+  cout<<"continuar calculo? 1-sim 2-nao"<<endl;
+    cin>>v.decisao; 
+};
+int main(){
+ inicio:
+calculo v;
+  int escolha;
+  cout<<"        :::::::::::::::escolha a operação::::::::::::::::::::\n";
+  cout<< "       [1] soma    [2]subtração  [3]multiplicacao [4]DIVISÃO:\n";
+  cin>>escolha;
+  switch(escolha){
+    case 1:     
+  Soma(v);
+break;
+    case 2:
+  Subtracao(v);
+    case 3:
+    Multiplicacao(v);
+    break;
+    case 4:
+    Divisao(v);
+    break;        
+    default:
+    cout<<"erro:escolha errada!, escolha novamente \n";
+      goto inicio;
+break;
+
+  }
+  if (v.decisao==1){
+goto inicio;
+
+    
+  }
+  else {
+    cout<<"fim do programa";
+  }
+  return 0;
+}
