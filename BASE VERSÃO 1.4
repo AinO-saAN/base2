@@ -1,0 +1,96 @@
+#include <algorithm>
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <string>
+#include <vector>
+#include <map>
+using namespace std;
+struct calculo {
+//int escolha; 
+float valor1, valor2, res; //*ponteiro1,*ponteiro2, *ponteiro3;
+int decisao;
+string name="digite o primeiro valor";
+string name2="digite o segundo valor";
+string name3="Resultado da soma:\n";
+string name4="continuar calculo? 1-sim 2-nao";
+string name5="erro:escolha errada!, escolha novamente \n";
+string name6="Fim do programa";
+};
+void Soma(calculo& v){
+  //*ponteiro3 = *ponteiro1 + *ponteiro2;
+  cout<<v.name<<endl;
+  cin>>v.valor1;
+  cout<<v.name2<<endl;
+  cin>>v.valor2;
+   v.res=v.valor1+v.valor2;
+  cout<<v.name3<<v.res<<endl;
+  cout<<v.name4<<endl;
+  cin>>v.decisao; 
+
+};
+void Subtracao(calculo& v){
+  //*ponteiro3 = *ponteiro1 - *ponteiro2;
+  cout<<v.name<<endl;
+  cin>>v.valor1;
+  cout<<v.name2<<endl;
+  cin>>v.valor2;
+   v.res=v.valor1-v.valor2;
+  cout<<v.name3<<v.res<<endl;
+  cout<<v.name4<<endl;
+  cin>>v.decisao; 
+};
+void Multiplicacao(calculo& v){
+  cout<<v.name<<endl;
+  cin>>v.valor1;
+  cout<<v.name2<<endl;
+  cin>>v.valor2;
+   v.res=v.valor1*v.valor2;
+  cout<<v.name3<<v.res<<endl;
+  cout<<v.name4<<endl;
+  cin>>v.decisao; 
+  
+};
+void Divisao(calculo& v){
+  cout<<v.name<<endl;
+  cin>>v.valor1;
+  cout<<v.name2<<endl;
+  cin>>v.valor2;
+   v.res=v.valor1/v.valor2;
+  cout<<v.name3<<v.res<<endl;
+  cout<<v.name4<<endl;
+    cin>>v.decisao; 
+};
+int main(){
+ inicio:
+calculo v;
+  int escolha;
+  cout<<"        :::::::::::::::escolha a operação::::::::::::::::::::\n";
+  cout<< "       [1] soma    [2]subtração  [3]multiplicacao [4]DIVISÃO:\n";
+  cin>>escolha;
+  switch(escolha){
+    case 1:     
+  Soma(v);
+break;
+    case 2:
+  Subtracao(v);
+    case 3:
+    Multiplicacao(v);
+    break;
+    case 4:
+    Divisao(v);
+    break;        
+    default:
+    cout<<v.name5;
+      goto inicio;
+break;
+  }
+  if (v.decisao==1){
+goto inicio;  
+  }
+  else {
+    cout<<v.name6;
+  }
+  return 0;
+}
